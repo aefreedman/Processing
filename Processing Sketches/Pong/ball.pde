@@ -4,7 +4,8 @@ class Ball {
   float yPos; 
   float xSpeed;
   float ySpeed;
-  int score;
+  int scoreP1;
+  int scoreP2;
 
   Ball() {
   }
@@ -26,8 +27,7 @@ class Ball {
     if (xPos >= width) {  //Scoring 
       xPos = width/2; //Always begins in midfield
       yPos = random(50, (height - r)); //Randomizes starting location
-      score = score + 1; //Tracks score
-      println("Score: " + score); //Displays Score in console
+      scoreP1 = scoreP1 + 1; //Tracks score
       xSpeed = -xSpeed; //Increments left_right speed
 //      ySpeed = random(-5, 5);  //Increments up_down speed
     } 
@@ -35,8 +35,7 @@ class Ball {
       if(xPos < 0) {
       xPos = width/2; //Always begins in midfield
       yPos = random(50, (height - r)); //Randomizes starting location
-      score = score - 1; //Tracks score
-      println("Score: " + score); //Displays Score in console
+      scoreP2 = scoreP2 + 1; //Tracks score
       xSpeed = -xSpeed; //Increments left_right speed
 //      ySpeed = random(-5, 5);  //Increments up_down speed
       }

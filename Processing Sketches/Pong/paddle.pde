@@ -4,40 +4,36 @@ class Paddle {
   float w;
   float h;
   float ySpeed;
+  char u, d;
 
-  Paddle(float _xPos, float _yPos, int _w, int _h, int _ySpeed) {
+  Paddle(float _xPos, float _yPos, int _w, int _h, int _ySpeed, char _u, char _d) {
     xPos = _xPos;
     yPos = _yPos;
     w = _w;
     h = _h;
     ySpeed = _ySpeed;
+    u = _u;
+    d = _d;
   }
   void displayPaddle() {
     movePaddle();
-
     rect(xPos, yPos, w, h);
   }
   void movePaddle() {
     if (keyPressed) {
-      if (key == 'w') {
+      if (key == u) {
         yPos = yPos - ySpeed;
       }
-      else if (key == 's') {
+      else if (key == d) {
         yPos = yPos + ySpeed;
       }
     }
     if (yPos >= (height - h)) {
       yPos = height - h;
     } 
-    else {
-      ySpeed = ySpeed;
-    }
-    if (yPos <= 0) {
+    else if (yPos <= 0) {
       yPos = 0;
     } 
-    else {
-      ySpeed = ySpeed;
-    }
   }
 }
 
